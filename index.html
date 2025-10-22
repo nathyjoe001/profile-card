@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Card</title>
+<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+</head>
+<body>
+    <button class="toggle-btn" id="toggleMode">🌙 Dark Mode</button>
+
+<article data-testid="test-profile-card">
+  <figure>
+    <img src="https://via.placeholder.com/120" alt="User Avatar" data-testid="test-user-avatar" id="avatar-img">
+    <figcaption>
+      <input type="file" id="avatar-upload" accept="image/*">
+    </figcaption>
+  </figure>
+
+  <div class="profile-info">
+    <header>
+      <h2 data-testid="test-user-name">Joseph Akpan</h2>
+    </header>
+
+    <p data-testid="test-user-bio">
+     <strong> I’m a frontend enthusiast building accessible and responsive web apps.
+    </strong></p>
+
+    <p>
+    <span class="time-label">Current time:</span>
+    <span data-testid="test-user-time"></span>
+    </p>
+
+
+
+
+   <nav data-testid="test-user-social-links">
+  <ul>
+    <li>
+      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/nathyjoe001" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/josephakpannath/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+    <section>
+      <h3>Hobbies</h3>
+      <ul data-testid="test-user-hobbies" class="card-list">
+        <li><a href="#" class="card hobby-card">Coding</a></li>
+        <li><a href="#" class="card hobby-card">Reading</a></li>
+        <li><a href="#" class="card hobby-card">Gaming</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Dislikes</h3>
+      <ul data-testid="test-user-dislikes" class="card-list">
+        <li><a href="#" class="card dislike-card">Spam</a></li>
+        <li><a href="#" class="card dislike-card">Procrastination</a></li>
+        <li><a href="#" class="card dislike-card">Loud environments</a></li>
+      </ul>
+    </section>
+  </div>
+</article>
+
+<script src="script.js"></script>
+</body>
+</html>
