@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // 1️⃣ Current time in milliseconds
-  const timeElement = document.querySelector('[data-testid="test-user-time"]');
+  const timeElement = document.getElementById('current-time');
+  
   function updateTime() {
     if(timeElement){
       timeElement.textContent = Date.now();

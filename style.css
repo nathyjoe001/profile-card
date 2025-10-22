@@ -1,353 +1,525 @@
-
-/* =========================================
+/* ==========================
 Global Reset & Font
-========================================= */
+========================== */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-a:focus { outline: 2px solid #0072ff; outline-offset: 2px; }
 
+/* ==========================
+Align Container Card Center
+========================== */
 body {
-background: linear-gradient(135deg, #0072ff, #00c6ff);
-background-size: 400% 400%;
-animation: gradientFlow 12s ease infinite;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-transition: background 0.5s ease;
-color: #333;
+  background: linear-gradient(135deg, #fff, #ddecf0);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;             /* full viewport height */
+  padding: 0 40px;           /* horizontal padding */
+  color: #333;
+  transition: background 0.5s ease;
+  overflow: hidden;
 }
 
-/* Animated Background */
+
+
+a:focus {
+  outline: 2px solid #0072ff;
+  outline-offset: 2px;
+}
+
+/* ==========================
+Animated Background
+========================== */
 @keyframes gradientFlow {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* =========================================
-Profile Card
-========================================= */
+/* ==========================
+Profile Card Container
+========================== */
 article[data-testid="test-profile-card"] {
-background: #fff;
-width: 380px;
-border-radius: 20px;
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-padding: 30px;
-text-align: center;
-transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  background: #3c6c4d;              /* deep green background */
+  width: 780px;                     /* reduced width for balanced look */
+  max-width: 95%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  margin: 40px auto;
 }
 
 article[data-testid="test-profile-card"]:hover {
-transform: translateY(-8px);
-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
-/* =========================================
-Avatar Section
-========================================= */
+
+
+/* Make the card container perfectly centered */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* both sides same height */
+  justify-content: space-between;
+  position: relative;
+}
+/* ==========================
+Avatar Section (Left)
+========================== */
 figure {
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
+  flex: 1;
+  background: #2f4f3b; /* darker green tone for contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #fff;
 }
 
 figure img {
-width: 120px;
-height: 120px;
-border-radius: 50%;
-object-fit: cover;
-border: 4px solid #00c6ff;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
 }
 
 figcaption {
-margin-top: 10px;
+  margin-top: 10px;
 }
 
 #avatar-upload {
-display: inline-block;
-border: none;
-padding: 8px 14px;
-background: #00c6ff;
-color: #fff;
-border-radius: 8px;
-cursor: pointer;
-font-size: 0.85rem;
-transition: background 0.3s ease;
-}
-
-#avatar-upload:hover {
-background: #0072ff;
-}
-
-/* =========================================
-Profile Info
-========================================= */
-.profile-info header h2 {
-font-size: 1.8rem;
-font-weight: 800;
-margin-top: 15px;
-color: #222;
-text-transform: capitalize;
-background: linear-gradient(90deg, #0072ff, #00c6ff, #0072ff);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
- background-clip: text; /* Standard */
-background-size: 200%;
-animation: nameGlow 4s linear infinite;
-letter-spacing: 1px;
-margin-bottom: 15px;
-}
-@keyframes nameGlow{
-    0%{background-position: 0%;}
-    100%{background-position: 200%;}
-}
-
-/*.profile-info p {
-font-size: 1.95rem;
-color: #555;
-margin: 10px 0;
-line-height: 1.5;
-} */
-/* Target the bio paragraph specifically */
-p[data-testid="test-user-bio"] {
-  font-size: 1rem;  
-  font-weight: 800px;        /* Adjust text size */
-  color: #555;              /* Text color */
-  line-height: 1.6;         /* Spacing between lines */
-  text-align: center;       /* Center text */
-  margin: 10px 0;           /* Space above and below */
-  font-style: italic;       /* Optional: make it italic */
-  max-width: 300px;   
-  margin-bottom: 15px;      /* Limit width for better readability */
-}
-p[data-testid="test-user-bio"]:hover {
-  color: #0072ff;
-  transform: scale(1.02);
+  margin-top: 15px;
+  padding: 8px 14px;
+  background: #00c6ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
 }
 
+#avatar-upload:hover {
+  background: #0072ff;
+}
 
-/* =========================================
+/* ==========================
+Profile Info (Right)
+========================== */
+
+.profile-info {
+  flex: 2;
+  background: #fff;
+  color: #222;
+  padding: 25px 35px;
+  text-align: center; /* cleaner layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile-info header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #44f741, hsl(239, 89%, 33%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200%;
+  animation: nameGlow 5s linear infinite;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+@keyframes nameGlow {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+.profile-info header p.role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #005fd1, #083771);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: roleGlow 5s linear infinite;
+}
+
+@keyframes roleGlow {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+p[data-testid="test-user-bio"] {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #005fd1;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto 15px; /* centers horizontally */
+  max-width: 500px; /* make it wider so it sits on one straight line */
+  display: block;
+  transition: all 0.3s ease;
+}
+
+p[data-testid="test-user-bio"]:hover {
+  color: #0072ff;
+  transform: scale(1.02);
+}
+
+
+/* ==========================
 Social Links
-========================================= */
+========================== */
 nav ul {
-list-style: none;
-margin: 10px 0;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
 }
 
 nav ul li {
-display: inline-block;
-margin: 0 8px;
+  display: inline-block;
+  margin: 0 8px;
 }
-
 
 nav ul li a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;           /* space between icon and text */
+  gap: 6px;
   text-decoration: none;
-  color: #0072ff;
+  color: #333;
   font-weight: 600;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-nav ul li a i {
-  font-size: 1rem;    /* icon size */
-}
-
 nav ul li a:hover {
-  color: #00c6ff;
+  color: #005fd1;
   transform: scale(1.1);
 }
 
-
-/* =========================================
-Tags (Hobbies & Dislikes)
-========================================= */
+/* ==========================
+Hobbies & Dislikes
+========================== */
 section {
-margin-top: 20px;
+  margin-top: 10px;
 }
 
 section h3 {
-text-transform: uppercase;
-font-size: 0.9rem;
-color: #555;
-letter-spacing: 1px;
-margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 800;
+  color:#005fd1;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
 }
+
 
 .card-list {
-list-style: none;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center; /* ✅ centers all the cards horizontally */
+  align-items: center;     /* ✅ optional — vertically centers if wrapped */
 }
+
+
 
 .card {
-display: inline-block;
-padding: 6px 14px;
-border-radius: 20px;
-font-size: 0.85rem;
-font-weight: 600;
-text-decoration: none;
-transition: all 0.3s ease;
-}
-
-/* Hobbies */
-
-.hobby-card { 
-    background: #e3f2fd; 
-    color: #0072ff; 
-    padding: 6px 14px; 
-    border-radius: 20px; 
-    text-decoration: none;
- }
-.hobby-card:hover { 
-    background: #0072ff; 
-    color: #fff; 
+  padding: 6px 12px;
+  border-radius: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 
+.hobby-card {
+  background: #e3f2fd;
+  color: #0072ff;
+}
 
+.hobby-card:hover {
+  background: #0072ff;
+  color: #fff;
+}
 
-/* Dislikes */
 .dislike-card {
-background: #ffe0e9;
-color: #ff3c78;
+  background: #e3f2fd;
+  color: #0072ff;
+  margin-bottom: 10px;
 }
 
 .dislike-card:hover {
-background: #ff3c78;
-color: #fff;
+  background: #0072ff;
+  color: #fff;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;          /* smaller space between buttons */
+  margin: 20px 0;     /* reduced vertical margin */
+  padding: 5px 0;     /* adds subtle inner padding */
+  margin-bottom: 2px;
 }
 
-/* =========================================
+.action-buttons a{
+  border-radius: 6px; /* reduced from typical 12–20px */
+  padding: 8px 16px;  /* tighter button size */
+  font-size: 14px;
+  font-weight: 500;
+  background: #FFD700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.action-buttons .call-btn:hover {
+  background: #d1c000;
+  transform: translateY(-2px);
+}
+.action-buttons .message-btn{
+  background: #25D366;
+  transform: translateY(-2px);
+}
+.action-buttons .message-btn:hover{
+  background: #3C6C4D;
+  transform: translateY(-2px);
+}
+.action-buttons .connect-btn{
+  background: #1877F2;
+  transform: translateY(-2px);
+}
+.action-buttons .connect-btn:hover{
+  background: #93b7e3;
+  transform: translateY(-2px);
+}
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.divider hr {
+  flex: 1;
+  border: none;
+  height: 0.5px;
+  background-color: #0072ff;
+  opacity: 0.6;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #005fd1;
+  font-weight: 900;
+  font-size: 10px;
+}
+
+
+
+.connect-btn,
+.message-btn {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+}
+
+.connect-btn:hover {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 198, 255, 0.4);
+}
+
+/* ==========================
 Dark Mode
-========================================= */
+========================== */
 body.dark-mode {
-background: linear-gradient(135deg, #1a1a1a, #333);
+  background: linear-gradient(135deg, #1a1a1a, #333);
 }
 
 body.dark-mode article[data-testid="test-profile-card"] {
-background: #222;
-color: #eee;
-box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  background: #222;
+  color: #eee;
+  box-shadow: 0 10px 25px rgba(255,255,255,0.1);
 }
 
 body.dark-mode .profile-info h2 {
-color: #fff;
+  color: #fff;
 }
 
 body.dark-mode .profile-info p,
 body.dark-mode section h3 {
-color: #ccc;
+  color: #ccc;
 }
 
 body.dark-mode .hobby-card {
-background: #263238;
-color: #4fc3f7;
+  background: #263238;
+  color: #4fc3f7;
 }
 
 body.dark-mode .dislike-card {
-background: #3a2434;
-color: #ff6f91;
+  background: #3a2434;
+  color: #ff6f91;
 }
 
-/* =========================================
+/* ==========================
 Toggle Button
-========================================= */
+========================== */
 .toggle-btn {
-position: absolute;
-top: 20px;
-right: 20px;
-background: #fff;
-color: #0072ff;
-border: none;
-padding: 8px 12px;
-border-radius: 8px;
-cursor: pointer;
-font-weight: 600;
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-transition: all 0.3s ease;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #fff;
+  color: #0072ff;
+  border: none;
+  padding: 5px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 
 .toggle-btn:hover {
-background: #0072ff;
-color: #fff;
+  background: #0072ff;
+  color: #fff;
 }
-.time-label {
-  background: linear-gradient(90deg, #0072ff, #00c6ff);
+
+/* ==========================
+Current Time Styling
+========================== */
+.time-label
+ {
+display: inline-block;
+  color: #005fd1; /* or #222 / #444 depending on theme */
+  font-weight: 800;
+  font-size: 20;
+  gap: 10px;
+}
+#current-time,
+#time-unit {
+    background: linear-gradient(90deg, #ff3c78, #ff6f91);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 700;
+  font-weight: 900;
+  font-size: 13px;
+
 }
 
-[data-testid="test-user-time"]{
-    display: inline;
-    font-size: 1 rem;
-    font-weight: 600;
-    color:#ff3c78;
-    background: rgba(0, 198, 225, 0.1);
-    padding: 4px 10px;
-    border-radius: 8px;
-    animation: pulseClock 1.5s ease-in-out infinite;
-    letter-spacing: 0.5px;
+#current-time {
+  animation: pulseClock 1.5s ease-in-out infinite;
 }
+
 @keyframes pulseClock {
-    0%{transform: scale(1); opacity: 1;}
-    50%{transform: scale(1.05); opacity: 0.8;}
-    100%{transform: scale(1); opacity: 1;}
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
 }
-/* =========================================
-Responsive Design (SM & MD)
-========================================= */
+
+[data-testid="test-user-time"] {
+  display: inline-block;
+  font-weight: 600;
+  color: #ff3c78;
+  background: rgba(0,198,225,0.1);
+  padding: 4px 10px;
+  border-radius: 8px;
+  animation: pulseClock 1.5s ease-in-out infinite;
+  letter-spacing: 0.5px;
+}
+
+@keyframes pulseClock {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================
+Responsive Design
+========================== */
 @media (max-width: 768px) {
-article[data-testid="test-profile-card"] {
-width: 90%;
-padding: 20px;
-}
+  article[data-testid="test-profile-card"] {
+    width: 90%;
+  }
 
-figure img {
-width: 100px;
-height: 100px;
-}
+  .card-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.profile-info header h2 {
-font-size: 1.4rem;
-}
+  figure {
+    border-radius: 0;
+    width: 100%;
+  }
 
-nav ul li {
-margin: 0 6px;
-}
+  figure img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-info {
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .profile-info header h2 {
+    font-size: 1.4rem;
+  }
+
+  nav ul li {
+    margin: 0 6px;
+  }
 }
 
 @media (max-width: 480px) {
-body {
-padding: 20px;
-}
+  body {
+    padding: 20px;
+  }
 
-article[data-testid="test-profile-card"] {
-width: 100%;
-border-radius: 14px;
-padding: 18px;
-}
+  article[data-testid="test-profile-card"] {
+    width: 100%;
+    border-radius: 14px;
+    padding: 18px;
+  }
 
-.toggle-btn {
-top: 10px;
-right: 10px;
-padding: 6px 10px;
-}
+  .toggle-btn {
+    top: 10px;
+    right: 10px;
+    padding: 6px 10px;
+  }
 
-.profile-info header h2 {
-font-size: 1.2rem;
-}
+  .profile-info header h2 {
+    font-size: 1.2rem;
+  }
 }

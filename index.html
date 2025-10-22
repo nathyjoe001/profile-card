@@ -1,85 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Profile Card</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
-
 </head>
 <body>
-    <button class="toggle-btn" id="toggleMode">🌙 Dark Mode</button>
 
 <article data-testid="test-profile-card">
-  <figure>
-    <img src="https://via.placeholder.com/120" alt="User Avatar" data-testid="test-user-avatar" id="avatar-img">
-    <figcaption>
-      <input type="file" id="avatar-upload" accept="image/*">
-    </figcaption>
-  </figure>
+  <div class="card-container">
+    <button class="toggle-btn" id="toggleMode">🌙 Dark Mode</button>
 
-  <div class="profile-info">
-    <header>
-      <h2 data-testid="test-user-name">Joseph Akpan</h2>
-    </header>
+    <!-- LEFT SIDE -->
+    <figure class="left-side">
+      <img src="https://via.placeholder.com/120" alt="User Avatar" id="avatar-img" />
+      <figcaption>
+        <input type="file" id="avatar-upload" accept="image/*" />
+      </figcaption>
+    </figure>
 
-    <p data-testid="test-user-bio">
-     <strong> I’m a frontend enthusiast building accessible and responsive web apps.
-    </strong></p>
+    <!-- RIGHT SIDE -->
+    <div class="profile-info">
+      <header>
+        <h2 class="gradient-text">Joseph Akpan <span class="nickname">(Braintech)</span></h2>
+        <p class="role"><strong>Frontend Developer</strong></p>
+      </header>
 
-    <p>
-    <span class="time-label">Current time:</span>
-    <span data-testid="test-user-time"></span>
-    </p>
+      <p style="color: #000;; font-size:12px; font-weight: bold; ">
+        Crafting responsive, accessible web apps that delight users.<br />
+        Turning ideas into interactive interfaces with<br>
+        <span style="color: blue; font-weight: bold; ">HTML, CSS, JavaScript & React</span>.
+      </p>
 
+      <section>
+        <h3>Hobbies</h3>
+        <div class="card-list">
+          <span class="card hobby-card">Coding</span>
+          <span class="card hobby-card">Reading</span>
+          <span class="card hobby-card">Gaming</span>
+        </div>
+      </section>
 
+      <section>
+        <h3>Dislikes</h3>
+        <div class="card-list">
+          <span class="card dislike-card">Spam</span>
+          <span class="card dislike-card">Procrastination</span>
+          <span class="card dislike-card">Loud environments</span>
+        </div>
+      </section>
 
+      <p>
+        <span class="time-label">Current Time:</span>
+        <span id="current-time">1761144801822</span>
+        <span id="time-unit">ms</span>
+      </p>
 
-   <nav data-testid="test-user-social-links">
-  <ul>
-    <li>
-      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">
-        <i class="fab fa-twitter"></i> Twitter
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/nathyjoe001" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">
-        <i class="fab fa-github"></i> GitHub
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/josephakpannath/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-    </li>
-  </ul>
-</nav>
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <a href="https://facebook.com/josef.leo.77582" target="_blank" class="connect-btn">
+          <i class="fab fa-facebook-f"></i> Connect
+        </a>
+        <a href="https://wa.me/2347067874118" target="_blank" class="message-btn">
+          <i class="fab fa-whatsapp"></i> Message
+        </a>
+        <a href="tel:+2347067874118" class="call-btn">
+            <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
 
+      <div class="divider">
+        <hr />
+        <span>OR</span>
+        <hr />
+      </div>
 
-    <section>
-      <h3>Hobbies</h3>
-      <ul data-testid="test-user-hobbies" class="card-list">
-        <li><a href="#" class="card hobby-card">Coding</a></li>
-        <li><a href="#" class="card hobby-card">Reading</a></li>
-        <li><a href="#" class="card hobby-card">Gaming</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Dislikes</h3>
-      <ul data-testid="test-user-dislikes" class="card-list">
-        <li><a href="#" class="card dislike-card">Spam</a></li>
-        <li><a href="#" class="card dislike-card">Procrastination</a></li>
-        <li><a href="#" class="card dislike-card">Loud environments</a></li>
-      </ul>
-    </section>
+      <!-- Social Links -->
+      <nav class="social-links">
+        <ul>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://github.com/nathyjoe001" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/josephakpannath/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </article>
-
 <script src="script.js"></script>
 </body>
 </html>
