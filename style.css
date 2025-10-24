@@ -397,31 +397,32 @@ body.dark-mode .dislike-card {
 
 
 /* ==========================
-Toggle Button (Small & Mobile Friendly)
+Toggle Button Top-Right
 ========================== */
 .toggle-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;            /* keep some distance from left */
+  position: fixed;        /* stay fixed on screen */
+  top: 12px;              /* distance from top */
+  right: 12px;            /* distance from right */
+  width: 38px;            /* small circle */
+  height: 38px;
   background: #fff;
   color: #0072ff;
   border: none;
-  padding: 4px 8px;      /* smaller button size */
-  border-radius: 50%;     /* makes it a circle */
+  border-radius: 50%;     /* circle shape */
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.8rem;      /* smaller text */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-  z-index: 10;            /* keep it above other elements */
+  font-size: 1rem;        /* icon size */
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;          /* above everything */
 }
 
 .toggle-btn:hover {
   background: #0072ff;
   color: #fff;
+  transform: scale(1.1);
 }
 
 /* ==========================
@@ -429,11 +430,13 @@ Mobile Adjustments
 ========================== */
 @media (max-width: 480px) {
   .toggle-btn {
-    top: 12px;
-    left: 12px;
-    padding: 3px 6px;     /* extra small on mobile */
-    font-size: 0.7rem;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
   }
+
 
   figure {
     margin-top: 40px;      /* push the avatar down so toggle doesn't overlap */
