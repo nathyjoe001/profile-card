@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeElement = document.getElementById('current-time');
   
   function updateTime() {
-    if(timeElement){
-      timeElement.textContent = Date.now();
+    if (timeElement) {
+      const now = new Date();
+      timeElement.textContent = now.toLocaleTimeString(); // prettier format
     }
   }
   updateTime();
@@ -14,28 +15,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const avatarInput = document.getElementById('avatar-upload');
   const avatarImg = document.getElementById('avatar-img');
 
-  avatarInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if(file){
-      const reader = new FileReader();
-      reader.onload = () => {
-        avatarImg.src = reader.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
+  if (avatarInput && avatarImg) {
+    avatarInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          avatarImg.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
 
   // 3️⃣ Dark mode toggle
-  const toggleButton = document.getElementById("toggleMode");
+  const toggleButton = document.getElementById('theme-toggle'); // updated ID
   const body = document.body;
 
-  toggleButton.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
 
-    if (body.classList.contains("dark-mode")) {
-      toggleButton.textContent = "☀️ Light Mode";
-    } else {
-      toggleButton.textContent = "🌙 Dark Mode";
-    }
-  });
+      // Change icon for light/dark mode
+      if (body.classList.contains('dark-mode')) {
+        toggleButton.textContent = '🌞'; // sun in dark mode
+      } else {
+        toggleButton.textContent = '🌙'; // moon in light mode
+      }
+    });
+  }
 });
