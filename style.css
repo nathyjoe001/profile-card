@@ -19,7 +19,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;       /* use min-height, not fixed height */
-  padding: 20px;           /* keep some space for smaller screens */
+  padding: 0 20px;           /* keep some space for smaller screens */
+
   color: #333;
   transition: background 0.5s ease;
   overflow-x: hidden;      /* allow vertical scroll but hide horizontal */
