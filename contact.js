@@ -1,49 +1,57 @@
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+// ✅ Mobile Menu
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
+const navMenu = document.getElementById("nav-menu");
 
-  // Get elements
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const subject = document.getElementById("subject");
-  const message = document.getElementById("message");
-  const success = document.getElementById("success-message");
+if (navToggle && navMenu && navClose) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.add("open");
+  });
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+  });
+}
+
+// ✅ Form Validation
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
   let isValid = true;
 
-  // Reset previous errors
-  document.querySelectorAll("[id^='error-']").forEach(div => div.textContent = "");
-  success.textContent = "";
+  // Clear old errors
+  document.querySelectorAll(".error-msg").forEach(el => (el.textContent = ""));
 
-  // Validation Rules
-  if (!name.value.trim()) {
-    document.getElementById("error-name").textContent = "Full name is required.";
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const subject = form.subject.value.trim();
+  const message = form.message.value.trim();
+
+  if (!name) {
+    document.getElementById("error-name").textContent = "Name is required.";
     isValid = false;
   }
 
-  if (!email.value.trim()) {
-    document.getElementById("error-email").textContent = "Email is required.";
-    isValid = false;
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-    document.getElementById("error-email").textContent = "Enter a valid email (e.g. name@example.com).";
+  if (!email || !/\S+@\S+\.\S+/.test(email)) {
+    document.getElementById("error-email").textContent = "Valid email required.";
     isValid = false;
   }
 
-  if (!subject.value.trim()) {
-    document.getElementById("error-subject").textContent = "Subject is required.";
+  if (!subject) {
+    document.getElementById("error-subject").textContent = "Subject required.";
     isValid = false;
   }
 
-  if (!message.value.trim()) {
-    document.getElementById("error-message").textContent = "Message is required.";
-    isValid = false;
-  } else if (message.value.trim().length < 10) {
-    document.getElementById("error-message").textContent = "Message must be at least 10 characters long.";
+  if (!message) {
+    document.getElementById("error-message").textContent = "Message required.";
     isValid = false;
   }
 
-  // Success
   if (isValid) {
-    success.textContent = "✅ Thank you! Your message has been successfully submitted.";
-    document.getElementById("contact-form").reset();
+    form.reset();
+    successMessage.hidden = false;
+    setTimeout(() => (successMessage.hidden = true), 3000);
   }
 });

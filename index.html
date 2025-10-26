@@ -14,13 +14,25 @@
 
 <article data-testid="test-profile-card">
   <header class="topbar">
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+   <nav class="navbar" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">Braintech</a>
+
+    <!-- Hamburger button (only visible on small screens) -->
+    <button class="nav-toggle" aria-label="Open Menu" id="nav-toggle">&#9776;</button>
+
+    <!-- Navigation links -->
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <!-- Close button (only visible on small screens) -->
+      <button class="nav-close" id="nav-close" aria-label="Close Menu">&times;</button>
+    </ul>
+  </div>
+</nav>
+
     <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
   </header>
 
@@ -36,7 +48,7 @@
     <!-- RIGHT SIDE -->
     <div class="profile-info">
       <header>
-        <h2 class="gradient-text">Joseph Akpan <span class="nickname">(Braintech)</span></h2>
+        <h2 class="gradient-text">Joseph Akpan <span class="nickname"></span></h2>
         <p class="role"><strong>Frontend Developer</strong></p>
       </header>
 

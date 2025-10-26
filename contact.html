@@ -1,44 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="contact.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Braintech</title>
+  <link rel="stylesheet" href="contact.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <!-- ✅ Navbar -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Braintech</a>
+
+      <!-- Hamburger menu (only visible on small screens) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open Menu">&#9776;</button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <button class="nav-close" id="nav-close" aria-label="Close Menu">&times;</button>
+      </ul>
+    </div>
   </nav>
 
-  <main>
+  <!-- ✅ Main Content -->
+  <main data-testid="test-contact-page" class="contact-container">
     <h1>Contact Us</h1>
 
     <form id="contact-form" novalidate>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" data-testid="test-contact-name" aria-describedby="error-name" required>
-      <div id="error-name" data-testid="test-contact-error-name"></div>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="Enter your name" 
+          required 
+          data-testid="test-contact-name"
+        />
+        <small class="error-msg" id="error-name" data-testid="test-contact-error-name"></small>
+      </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" data-testid="test-contact-email" aria-describedby="error-email" required>
-      <div id="error-email" data-testid="test-contact-error-email"></div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Enter your email" 
+          required 
+          data-testid="test-contact-email"
+        />
+        <small class="error-msg" id="error-email" data-testid="test-contact-error-email"></small>
+      </div>
 
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" data-testid="test-contact-subject" aria-describedby="error-subject" required>
-      <div id="error-subject" data-testid="test-contact-error-subject"></div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          placeholder="Enter subject" 
+          required 
+          data-testid="test-contact-subject"
+        />
+        <small class="error-msg" id="error-subject" data-testid="test-contact-error-subject"></small>
+      </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" data-testid="test-contact-message" aria-describedby="error-message" required></textarea>
-      <div id="error-message" data-testid="test-contact-error-message"></div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5" 
+          placeholder="Write your message..." 
+          required 
+          data-testid="test-contact-message"
+        ></textarea>
+        <small class="error-msg" id="error-message" data-testid="test-contact-error-message"></small>
+      </div>
 
-      <button type="submit" data-testid="test-contact-submit">Submit</button>
-      <p id="success-message" data-testid="test-contact-success"></p>
+      <button type="submit" class="submit-btn" data-testid="test-contact-submit">
+        Send Message
+      </button>
     </form>
+
+    <p id="success-message" class="success-msg" data-testid="test-contact-success" hidden>
+      ✅ Message sent successfully! Thank you for contacting us.
+    </p>
   </main>
+  <!-- ⚙️ FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Joseph Akpan | Built for HNG Stage 1 🚀</p>
+  </footer>
+
 
   <script src="contact.js"></script>
 </body>

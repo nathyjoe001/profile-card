@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - HNG Stage 1</title>
+  <link rel="stylesheet" href="about.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <!-- 🌐 NAVBAR -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Braintech</a>
+
+      <!-- Hamburger menu button (visible on small screens) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open Menu">&#9776;</button>
+
+      <!-- Navigation links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <!-- Close button for mobile -->
+        <button class="nav-close" id="nav-close" aria-label="Close Menu">&times;</button>
+      </ul>
+    </div>
   </nav>
 
+  <!-- 🧠 MAIN CONTENT -->
   <main data-testid="test-about-page">
     <h1>About Me</h1>
 
+    <!-- 🧍 BIO -->
     <section>
       <h2>Bio</h2>
-      <p data-testid="test-about-bio">My name is Joseph Akpan, a passionate frontend developer who loves building user-friendly websites.</p>
+      <p data-testid="test-about-bio">
+        Hello! I’m <strong>Joseph Akpan</strong>, a passionate <em>Frontend Developer</em> 
+        who enjoys creating interactive, user-centered web interfaces.
+        My love for technology began with curiosity and has evolved into a career goal
+        of building products that simplify people’s lives.
+      </p>
     </section>
 
+    <!-- 🎯 GOALS IN THIS PROGRAM -->
     <section>
-      <h2>Goals in this Program</h2>
-      <p data-testid="test-about-goals">I aim to become a top frontend engineer capable of building full-scale web apps and contributing to open source.</p>
+      <h2>Goals in This Program</h2>
+      <p data-testid="test-about-goals">
+        My goal in the <strong>HNG Internship</strong> is to level up my frontend 
+        development skills through real-world projects, learn from amazing mentors,
+        and become a full-stack engineer capable of solving complex problems.
+      </p>
+      <ul>
+        <li>Improve React and JavaScript proficiency</li>
+        <li>Strengthen teamwork and communication</li>
+        <li>Contribute to open-source-style challenges</li>
+      </ul>
     </section>
 
+    <!-- ⚡ AREAS OF LOW CONFIDENCE -->
     <section>
       <h2>Areas of Low Confidence</h2>
-      <p data-testid="test-about-confidence">I’m currently working on improving my understanding of accessibility and performance optimization.</p>
+      <p data-testid="test-about-confidence">
+        I’m currently working to improve my knowledge of accessibility standards,
+        backend optimization, and debugging advanced UI state management. 
+        Every project helps me get better at them.
+      </p>
     </section>
 
+    <!-- 🕰️ NOTE TO FUTURE SELF -->
     <section>
       <h2>Note to Future Self</h2>
-      <p data-testid="test-about-future-note">Keep pushing, stay consistent, and don’t be afraid to learn from mistakes!</p>
+      <p data-testid="test-about-future-note">
+        Dear Future Joseph — keep pushing forward. Remember that progress 
+        doesn’t have to be perfect. Stay consistent, be patient with yourself,
+        and always build something that matters.
+      </p>
     </section>
 
+    <!-- 💭 EXTRA THOUGHTS -->
     <section>
       <h2>Extra Thoughts</h2>
-      <p data-testid="test-about-extra">Always remember — consistency beats talent when talent doesn’t work hard!</p>
+      <p data-testid="test-about-extra">
+        Joining this program is a great reminder that growth comes from collaboration.
+        I’m excited to learn, build, and connect with others who share the same passion.
+        Consistency beats talent when talent doesn’t work hard!
+      </p>
     </section>
   </main>
+
+  <!-- 🌗 DARK MODE TOGGLE -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Joseph Akpan | Built for HNG Stage 1 🚀</p>
+  </footer>
+
+  <script src="about.js"></script>
 </body>
 </html>
