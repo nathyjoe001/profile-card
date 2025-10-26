@@ -13,12 +13,18 @@
 <body>
 
 <article data-testid="test-profile-card">
+  <header class="topbar">
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+  </header>
+
   <div class="card-container">
-    <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
-  🌙
-</button>
-
-
     <!-- LEFT SIDE -->
     <figure class="left-side">
       <img src="https://via.placeholder.com/120" alt="User Avatar" id="avatar-img" />
@@ -34,10 +40,10 @@
         <p class="role"><strong>Frontend Developer</strong></p>
       </header>
 
-      <p style="color: #000;; font-size:12px; font-weight: bold; ">
+      <p style="color: #000; font-size:12px; font-weight: bold;">
         Crafting responsive, accessible web apps that delight users.<br />
         Turning ideas into interactive interfaces with<br>
-        <span style="color: blue; font-weight: bold; ">HTML, CSS, JavaScript & React</span>.
+        <span style="color: blue; font-weight: bold;">HTML, CSS, JavaScript & React</span>.
       </p>
 
       <section>
@@ -64,7 +70,6 @@
         <span id="time-unit">ms</span>
       </p>
 
-      <!-- Action Buttons -->
       <div class="action-buttons">
         <a href="https://facebook.com/josef.leo.77582" target="_blank" class="connect-btn">
           <i class="fab fa-facebook-f"></i> Connect
@@ -83,7 +88,6 @@
         <hr />
       </div>
 
-      <!-- Social Links -->
       <nav class="social-links">
         <ul>
           <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -94,6 +98,7 @@
     </div>
   </div>
 </article>
+
 <script src="script.js"></script>
 </body>
 </html>
